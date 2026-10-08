@@ -1,0 +1,46 @@
+STACK AND QUEUE TESTING
+
+Stack Tests:
+1. Push 10
+   Result: Value pushed successfully.
+
+2. Push 20
+   Result: Value pushed successfully.
+
+3. Peek
+   Result: Top value: 20
+
+4. Display
+   Result: 10 20
+
+5. Pop
+   Result: Popped value: 20
+
+6. Empty Stack Validation
+   Result: Stack is empty. Cannot pop.
+
+
+Queue Tests:
+1. Enqueue 10
+   Result: Value enqueued successfully.
+
+2. Enqueue 20
+   Result: Value enqueued successfully.
+
+3. Peek
+   Result: Front value: 10
+
+4. Display
+   Result: 10 20
+
+5. Dequeue
+   Result: Dequeued value: 10
+
+6. Empty Queue Validation
+   Result: Queue is empty. Cannot dequeue.
+
+
+Conclusion:
+Stack and Queue operations were tested successfully,
+including push, pop, peek, display, enqueue, dequeue,
+and empty validation.
