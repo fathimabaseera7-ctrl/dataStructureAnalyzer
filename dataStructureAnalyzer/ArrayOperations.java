@@ -48,3 +48,4 @@ public class ArrayOperations {
         System.out.println();
     }
 }
+Array empty
