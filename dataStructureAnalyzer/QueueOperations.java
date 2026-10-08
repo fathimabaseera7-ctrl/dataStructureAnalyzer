@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class QueueOperations {
-    private Queue<Integer> queue = new LinkedList<>();
+    private final Queue<Integer> queue = new LinkedList<>();
 
     public void enqueue(int value) {
         queue.offer(value);
