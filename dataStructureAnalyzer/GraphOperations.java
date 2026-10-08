@@ -16,14 +16,21 @@ public class GraphOperations {
         System.out.println("Vertex added successfully.");
     }
 
-    // Add a directed edge
+    // Add a directed edge between two vertices
     public void addEdge(int source, int destination) {
         if (!graph.containsKey(source)) {
+            System.out.println("Source vertex does not exist. Adding it now.");
             addVertex(source);
         }
 
         if (!graph.containsKey(destination)) {
+            System.out.println("Destination vertex does not exist. Adding it now.");
             addVertex(destination);
+        }
+
+        if (source == destination) {
+            System.out.println("Self-loop is not allowed.");
+            return;
         }
 
         if (graph.get(source).contains(destination)) {
