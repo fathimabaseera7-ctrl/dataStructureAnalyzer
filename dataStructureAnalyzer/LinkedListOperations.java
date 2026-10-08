@@ -60,7 +60,7 @@ public class LinkedListOperations {
         }
     }
 
-    // Search for a value in the linked list
+    // Search for a value and display its position
     public boolean search(int value) {
         if (head == null) {
             System.out.println("Linked List is empty.");
@@ -68,14 +68,16 @@ public class LinkedListOperations {
         }
 
         Node current = head;
+        int position = 1;
 
         while (current != null) {
             if (current.data == value) {
-                System.out.println("Value found.");
+                System.out.println("Value found at position: " + position);
                 return true;
             }
 
             current = current.next;
+            position++;
         }
 
         System.out.println("Value not found.");
