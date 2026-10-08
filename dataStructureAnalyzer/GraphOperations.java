@@ -3,6 +3,7 @@ package dataStructureAnalyzer;
 import java.util.*;
 
 public class GraphOperations {
+
     private final Map<Integer, List<Integer>> graph = new HashMap<>();
 
     // Add a new vertex
@@ -18,6 +19,7 @@ public class GraphOperations {
 
     // Add a directed edge between two vertices
     public void addEdge(int source, int destination) {
+
         if (!graph.containsKey(source)) {
             System.out.println("Source vertex does not exist. Adding it now.");
             addVertex(source);
@@ -39,11 +41,13 @@ public class GraphOperations {
         }
 
         graph.get(source).add(destination);
+
         System.out.println("Edge added successfully.");
     }
 
     // Display the graph
     public void displayGraph() {
+
         if (graph.isEmpty()) {
             System.out.println("Graph is empty.");
             return;
@@ -52,6 +56,7 @@ public class GraphOperations {
         System.out.println("\nGraph:");
 
         for (Map.Entry<Integer, List<Integer>> entry : graph.entrySet()) {
+
             System.out.print(entry.getKey() + " -> ");
 
             for (Integer neighbour : entry.getValue()) {
@@ -64,6 +69,7 @@ public class GraphOperations {
 
     // Breadth First Search
     public void bfs(int startVertex) {
+
         if (!graph.containsKey(startVertex)) {
             System.out.println("Vertex not found.");
             return;
@@ -75,13 +81,17 @@ public class GraphOperations {
         queue.offer(startVertex);
         visited.add(startVertex);
 
-        System.out.print("BFS Traversal [Start: " + startVertex + "]: ");
+        System.out.print("BFS Traversal [Start: "
+                + startVertex + "]: ");
 
         while (!queue.isEmpty()) {
+
             int current = queue.poll();
+
             System.out.print(current + " ");
 
             for (Integer neighbour : graph.get(current)) {
+
                 if (visited.add(neighbour)) {
                     queue.offer(neighbour);
                 }
@@ -93,22 +103,31 @@ public class GraphOperations {
 
     // Depth First Search
     public void dfs(int startVertex) {
+
         if (!graph.containsKey(startVertex)) {
             System.out.println("Vertex not found.");
             return;
         }
 
-        System.out.print("DFS Traversal [Start: " + startVertex + "]: ");
-        dfsRecursive(startVertex, new HashSet<>());
+        Set<Integer> visited = new HashSet<>();
+
+        System.out.print("DFS Traversal [Start: "
+                + startVertex + "]: ");
+
+        dfsRecursive(startVertex, visited);
+
         System.out.println();
     }
 
     // Recursive DFS helper
     private void dfsRecursive(int vertex, Set<Integer> visited) {
+
         visited.add(vertex);
+
         System.out.print(vertex + " ");
 
         for (Integer neighbour : graph.get(vertex)) {
+
             if (!visited.contains(neighbour)) {
                 dfsRecursive(neighbour, visited);
             }
