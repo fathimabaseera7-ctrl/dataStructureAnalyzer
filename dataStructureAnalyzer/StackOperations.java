@@ -3,7 +3,7 @@ package dataStructureAnalyzer;
 import java.util.Stack;
 
 public class StackOperations {
-    private Stack<Integer> stack = new Stack<>();
+   private final Stack<Integer> stack = new Stack<>();
 
     public void push(int value) {
         stack.push(value);
