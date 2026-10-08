@@ -3,7 +3,7 @@ package dataStructureAnalyzer;
 import java.util.Stack;
 
 public class StackOperations {
-   private final Stack<Integer> stack = new Stack<>();
+    private final Stack<Integer> stack = new Stack<>();
 
     public void push(int value) {
         stack.push(value);
@@ -11,28 +11,40 @@ public class StackOperations {
     }
 
     public void pop() {
-        if (stack.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Stack is empty. Cannot pop.");
             return;
         }
+
         System.out.println("Popped value: " + stack.pop());
     }
 
     public void peek() {
-        if (stack.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Stack is empty.");
             return;
         }
+
         System.out.println("Top value: " + stack.peek());
     }
 
     public void display() {
-        if (stack.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Stack is empty.");
             return;
         }
+
         System.out.println("Stack Elements:");
-        for (Integer value : stack) System.out.print(value + " ");
+
+        for (Integer value : stack) {
+            System.out.print(value + " ");
+        }
+
         System.out.println();
+    }
+
+    // Check whether the stack is empty
+    private boolean isEmpty() {
+        return stack.isEmpty();
     }
 }
