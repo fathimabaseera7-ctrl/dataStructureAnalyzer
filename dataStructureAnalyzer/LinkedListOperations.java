@@ -31,13 +31,14 @@ public class LinkedListOperations {
         System.out.println("Value inserted successfully.");
     }
 
-    // Delete a value from the linked list
+    // Delete the first occurrence of a value
     public void delete(int value) {
         if (head == null) {
-            System.out.println("Linked List is empty.");
+            System.out.println("Linked List is empty. Cannot delete.");
             return;
         }
 
+        // Delete the first node
         if (head.data == value) {
             head = head.next;
             System.out.println("Value deleted successfully.");
@@ -46,12 +47,13 @@ public class LinkedListOperations {
 
         Node current = head;
 
+        // Find the node before the value to be deleted
         while (current.next != null && current.next.data != value) {
             current = current.next;
         }
 
         if (current.next == null) {
-            System.out.println("Value not found.");
+            System.out.println("Value not found. Nothing was deleted.");
         } else {
             current.next = current.next.next;
             System.out.println("Value deleted successfully.");
