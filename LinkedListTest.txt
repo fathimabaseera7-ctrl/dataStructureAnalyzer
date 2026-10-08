@@ -1,0 +1,32 @@
+LINKED LIST TESTING
+
+Insert Test:
+Input: 10, 20
+Result: Values inserted successfully.
+
+Display Test:
+Result: 10 20
+Total Elements: 2
+
+Search Test:
+Input: 20
+Result: Value found at position: 2
+
+Search Not Found Test:
+Input: 99
+Result: Value not found.
+
+Delete Test:
+Input: 10
+Result: Value deleted successfully.
+
+Display After Delete:
+Result: 20
+Total Elements: 1
+
+Empty Linked List Validation:
+Result: Linked List is empty. Cannot delete.
+
+Conclusion:
+Linked List insert, delete, search, display,
+and empty-list validation were tested successfully.
