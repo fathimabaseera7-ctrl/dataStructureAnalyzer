@@ -75,7 +75,7 @@ public class GraphOperations {
         queue.offer(startVertex);
         visited.add(startVertex);
 
-        System.out.print("BFS Traversal: ");
+        System.out.print("BFS Traversal [Start: " + startVertex + "]: ");
 
         while (!queue.isEmpty()) {
             int current = queue.poll();
@@ -98,7 +98,7 @@ public class GraphOperations {
             return;
         }
 
-        System.out.print("DFS Traversal: ");
+        System.out.print("DFS Traversal [Start: " + startVertex + "]: ");
         dfsRecursive(startVertex, new HashSet<>());
         System.out.println();
     }
