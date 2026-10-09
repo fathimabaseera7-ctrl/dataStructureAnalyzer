@@ -3,49 +3,52 @@ package dataStructureAnalyzer;
 import java.util.Arrays;
 
 public class SearchingOperations {
+
     public int linearSearch(int[] array, int target) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == target) return i;
+        if (array == null || array.length == 0) {
+            return -1;
         }
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+
         return -1;
     }
 
     public int binarySearch(int[] array, int target) {
-        int left = 0, right = array.length - 1;
+        if (array == null || array.length == 0) {
+            return -1;
+        }
+
+        int left = 0;
+        int right = array.length - 1;
+
         while (left <= right) {
             int middle = left + (right - left) / 2;
-            if (array[middle] == target) return middle;
-            if (array[middle] < target) left = middle + 1;
-            else right = middle - 1;
+
+            if (array[middle] == target) {
+                return middle;
+            }
+
+            if (array[middle] < target) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
+            }
         }
-        return -1; 
-public int binarySearch(int[] array, int target) {
-    if (array == null || array.length == 0) {
+
         return -1;
     }
 
-    int left = 0;
-    int right = array.length - 1;
-
-    while (left <= right) {
-        int middle = left + (right - left) / 2;
-
-        if (array[middle] == target) {
-            return middle;
-        }
-
-        if (array[middle] < target) {
-            left = middle + 1;
-        } else {
-            right = middle - 1;
-        }
-    }
-
-    return -1;
-}
-    }
-
     public void compareSearch(int[] array, int target) {
+        if (array == null || array.length == 0) {
+            System.out.println("Array is empty. Cannot perform search.");
+            return;
+        }
+
         int[] sortedArray = Arrays.copyOf(array, array.length);
         Arrays.sort(sortedArray);
 
@@ -67,22 +70,4 @@ public int binarySearch(int[] array, int target) {
                 "Value found in sorted array at index: " + binaryResult);
         System.out.println("Execution Time: " + (endBinary - startBinary) + " ns");
     }
-}
-
-
-
-
-
-public int linearSearch(int[] array, int target) {
-    if (array == null || array.length == 0) {
-        return -1;
-    }
-
-    for (int i = 0; i < array.length; i++) {
-        if (array[i] == target) {
-            return i;
-        }
-    }
-
-    return -1;
 }

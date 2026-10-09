@@ -4,6 +4,7 @@ public class ArrayOperations {
     private int[] array;
     private int size;
 
+    
     public ArrayOperations(int capacity) {
         array = new int[capacity];
         size = 0;
@@ -48,17 +49,4 @@ public class ArrayOperations {
         System.out.println();
     }
 }
- public int linearSearch(int[] array, int target) {
-    if (array == null || array.length == 0) {
-        return -1;
-    }
-
-    for (int i = 0; i < array.length; i++) {
-        if (array[i] == target) {
-            return i;
-        }
-    }
-
-    return -1;
-}
-empty array validation
+ 

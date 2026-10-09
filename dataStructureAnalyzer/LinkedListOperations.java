@@ -1,18 +1,21 @@
 package dataStructureAnalyzer;
 
 public class LinkedListOperations {
+
     private Node head;
 
+    // Node class
     private static class Node {
         int data;
         Node next;
 
         Node(int data) {
             this.data = data;
+            this.next = null;
         }
     }
 
-    // Insert a new value at the end of the linked list
+    // Insert a value at the end
     public void insert(int value) {
         Node newNode = new Node(value);
 
@@ -38,7 +41,7 @@ public class LinkedListOperations {
             return;
         }
 
-        // Delete the first node
+        // Delete first node
         if (head.data == value) {
             head = head.next;
             System.out.println("Value deleted successfully.");
@@ -47,7 +50,6 @@ public class LinkedListOperations {
 
         Node current = head;
 
-        // Find the node before the value to be deleted
         while (current.next != null && current.next.data != value) {
             current = current.next;
         }
@@ -60,7 +62,7 @@ public class LinkedListOperations {
         }
     }
 
-    // Search for a value and display its position
+    // Search for a value
     public boolean search(int value) {
         if (head == null) {
             System.out.println("Linked List is empty.");
@@ -84,7 +86,7 @@ public class LinkedListOperations {
         return false;
     }
 
-    // Display all values and total number of elements
+    // Display all values
     public void display() {
         if (head == null) {
             System.out.println("Linked List is empty.");
